@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}首頁 - 我的網站{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <h2>歡迎來到我的網站</h2>
+    <p>這是一個基本的網站架構示例</p>
+    <button id="apiBtn" class="btn">點擊我 - 呼叫 API</button>
+</section>
+
+<section class="features">
+    <div class="feature-card">
+        <h3>🎨 設計</h3>
+        <p>現代化的設計界面</p>
+    </div>
+    <div class="feature-card">
+        <h3>⚡ 快速</h3>
+        <p>快速的載入速度</p>
+    </div>
+    <div class="feature-card">
+        <h3>📱 響應式</h3>
+        <p>支持所有設備</p>
+    </div>
+</section>
+
+<div id="result"></div>
+{% endblock %}
