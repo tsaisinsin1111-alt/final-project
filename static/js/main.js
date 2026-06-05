@@ -1,7 +1,5 @@
 // 基本的JavaScript功能
-
 document.addEventListener('DOMContentLoaded', function() {
-    // API按鈕點擊事件
     const apiBtn = document.getElementById('apiBtn');
     const resultDiv = document.getElementById('result');
     
@@ -12,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// API 呼叫函式
 function callApi() {
     const resultDiv = document.getElementById('result');
     
@@ -23,7 +22,25 @@ function callApi() {
         })
         .catch(error => {
             console.error('錯誤:', error);
-            resultDiv.innerHTML = '<p style="color: red;">API呼叫失敗</p>';
-            resultDiv.style.display = 'block';
+            // 顯示緊急告示牌
+            showSiteBroken();
         });
 }
+
+// 緊急處理函式
+function showSiteBroken() {
+    document.body.innerHTML = `
+    <div style="
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    font-size:48px;
+    background:black;
+    color:red;
+    ">
+    SITE BROKEN
+    </div>
+    `;
+}
+
