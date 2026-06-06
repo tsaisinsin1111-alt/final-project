@@ -1,17 +1,14 @@
-// 等待 DOM 載入完成
 document.addEventListener('DOMContentLoaded', function() {
     const apiBtn = document.getElementById('apiBtn');
     const resultDiv = document.getElementById('result');
     const recommendBtn = document.getElementById('recommendBtn');
 
-    // 綁定 API 測試按鈕
     if (apiBtn) {
         apiBtn.addEventListener('click', function() {
             callApi();
         });
     }
 
-    // 綁定推薦商品按鈕
     if (recommendBtn) {
         recommendBtn.addEventListener('click', function() {
             const budget = document.getElementById('budget').value;
@@ -21,10 +18,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// 呼叫 /api/hello 測試 API
 function callApi() {
     const resultDiv = document.getElementById('result');
-    
     fetch('/api/hello')
         .then(response => response.json())
         .then(data => {
@@ -37,10 +32,8 @@ function callApi() {
         });
 }
 
-// 呼叫 /recommend 推薦商品 API
 function callRecommend(budget, type) {
     const recommendResult = document.getElementById('recommendResult');
-
     fetch('/recommend', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -61,7 +54,6 @@ function callRecommend(budget, type) {
     });
 }
 
-// 緊急處理函式
 function showSiteBroken() {
     document.body.innerHTML = `
     <div style="
@@ -77,6 +69,7 @@ function showSiteBroken() {
     </div>
     `;
 }
+
 
 
 
