@@ -26,4 +26,12 @@
 <p>這是我的開發線 - MattDevBranch</p>
 
 <div id="result"></div>
+<section class="recommend">
+  <h2>商品推薦</h2>
+  <input type="number" id="budget" placeholder="輸入預算">
+  <input type="text" id="type" placeholder="輸入類型">
+  <button id="recommendBtn">推薦商品</button>
+  <div id="recommendResult"></div>
+</section>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
 {% endblock %}
