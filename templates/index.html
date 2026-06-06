@@ -26,6 +26,9 @@
 <p>這是我的開發線 - MattDevBranch</p>
 
 <div id="result"></div>
+<button id="apiBtn" class="btn">點擊我 - 呼叫 API</button>
+<div id="result"></div>
+
 <section class="recommend">
   <h2>商品推薦</h2>
   <input type="number" id="budget" placeholder="輸入預算">
@@ -33,5 +36,8 @@
   <button id="recommendBtn">推薦商品</button>
   <div id="recommendResult"></div>
 </section>
+
+<!-- 載入 main.js -->
 <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
 {% endblock %}
